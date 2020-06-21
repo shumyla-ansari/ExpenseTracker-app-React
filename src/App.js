@@ -1,13 +1,26 @@
+  
 import React from 'react';
-import Child from './components/Child'
+import { Header } from './components/header';
+import { Balance } from './components/balance';
+import { IncomeExpenses } from './components/incomeExpense';
+import { TransactionList } from './components/transList';
+import { AddTransaction } from './components/addTrans';
+
+import {TransactionProvider} from './context/transContext';
+
+
 import './App.css';
-import {TransactionProvider} from './components/transContext'
 
 function App() {
   return (
-    
     <TransactionProvider>
-      <Child/>
+      <Header />
+      <div className="container">
+        <Balance />
+        <IncomeExpenses />
+        <TransactionList />
+        <AddTransaction />
+      </div>
     </TransactionProvider>
   );
 }
